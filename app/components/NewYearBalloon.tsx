@@ -32,13 +32,15 @@ const NewYearBalloon = () => {
     const CurrentCelebrationIcon = celebrationIcons[currentIcon];
 
     const messages = [
-        "¡Que todos tus sueños se hagan realidad en 2025!",
-        "¡Que este 2025 esté lleno de amor y éxitos!",
-        "¡Que tengamos muchas risas y momentos juntos!",
-        "¡Que este 2025 este lleno de salud y felicidad!",
-        "¡Que este 2025 disfrutemos de nuestros juegos como nunca!",
-        "¡Un nuevo año lleno de nuevas oportunidades y proyectos!",
-        "¡Que la felicidad te acompañe en este 2025!"
+        "¡Que todos tus sueños se hagan realidad en 2025 😬!",
+        "¡Que este 2025 esté lleno de amor, éxitos y muchos abrazos 🤗❤️!",
+        "¡Que tengamos muchas risas y momentos juntos 😬!",
+        "¡Que este 2025 este lleno de salud y felicidad para nosotros y a los que queremos 🥳!",
+        "¡Que este 2025 el bienestar de tu familia este en lo mas alto 💫!",
+        "¡Que tu y Gandalf estén saludables y felices 💗!",
+        "¡Que este 2025 disfrutemos de nuestros juegos como nunca y encontremos muchas cosas mas que compartir jusntos 🎮👾!",
+        "¡Por un año 2025 lleno de nuevas oportunidades y proyectos 🏅👩‍💻👨‍💻🏆!",
+        "¡Que la felicidad nos acompañe en este 2025 🤗🎉🎊🥂!"
     ];
 
     const randomMessage = messages[Math.floor(Math.random() * messages.length)];
