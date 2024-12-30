@@ -96,7 +96,7 @@ const NewYearBalloon = () => {
             </div>
 
             <footer className="absolute bottom-4 text-white/80 text-sm">
-                Created with Next.js ❤️ by E. Retana
+                Con todo el cariño de mi corazón ❤️ Erik
             </footer>
         </div>
     );
