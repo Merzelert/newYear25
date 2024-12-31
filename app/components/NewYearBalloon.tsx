@@ -37,11 +37,12 @@ const NewYearBalloon = () => {
         "¡Que tengamos muchas risas y momentos juntos 😬!",
         "¡Que este 2025 este lleno de salud y felicidad para nosotros y a los que queremos 🥳!",
         "¡Que este 2025 el bienestar de tu familia este en lo mas alto 💫!",
-        "¡Que el equipo pAndy y Merz pueda con todo a lo que se enfrente este año 🤗❤️🎮!",
+        "¡Hagamos que el equipo pAndy y Merz pueda con todo a lo que se enfrente este año 🤗❤️🎮!",
         "¡Que tu y Gandalf estén saludables y felices 💗!",
         "¡Que este 2025 disfrutemos de nuestros juegos como nunca y encontremos muchas cosas mas que compartir juntos 🎮👾!",
         "¡Por un año 2025 lleno de nuevas oportunidades y proyectos 🏅👩‍💻👨‍💻🏆!",
-        "¡Que la felicidad nos acompañe en este 2025 🤗🎉🎊🥂!"
+        "¡Que la felicidad nos acompañe en este 2025 🤗🎉🎊🥂!",
+        "Gracias por tener la oportunidad de compartir este camino contigo mi querida Andy :3 🤗❤️🎮"
     ];
 
     const randomMessage = messages[Math.floor(Math.random() * messages.length)];
