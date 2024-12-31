@@ -29,7 +29,7 @@ const NewYearBalloon = () => {
         "¡Que la felicidad nos acompañe en este 2025 🤗🎉🎊🥂!"
     ];
 
-    const finalMessage = "Gracias por este año tan maravilloso Andy, te quiero mucho! 🤗❤️";
+    const finalMessage = "Gracias por este año tan maravilloso Andy, recuerda que tu brillas mas bonito que el mismísimo sol, te quiero mucho! 🤗❤️";
 
     const celebrationIcons = [
         GiPartyPopper,
