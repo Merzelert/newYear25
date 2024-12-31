@@ -12,24 +12,9 @@ import { FaRegStar } from 'react-icons/fa';
 const NewYearBalloon = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [currentIcon, setCurrentIcon] = useState(0);
+    const [messageIndex, setMessageIndex] = useState(0);
+    const [isComplete, setIsComplete] = useState(false);
     const { width, height } = useWindowSize();
-
-    const celebrationIcons = [
-        GiPartyPopper,
-        MdCelebration,
-        GiPartyHat,
-        BsBalloonHeart,
-        GiStarsStack,
-        FaRegStar,
-        BsGift
-    ];
-
-    const handleReset = () => {
-        setIsOpen(false);
-        setCurrentIcon((prev) => (prev + 1) % celebrationIcons.length);
-    };
-
-    const CurrentCelebrationIcon = celebrationIcons[currentIcon];
 
     const messages = [
         "¡Que todos tus sueños se hagan realidad en 2025 😬!",
@@ -41,11 +26,38 @@ const NewYearBalloon = () => {
         "¡Que tu y Gandalf estén saludables y felices 💗!",
         "¡Que este 2025 disfrutemos de nuestros juegos como nunca y encontremos muchas cosas mas que compartir juntos 🎮👾!",
         "¡Por un año 2025 lleno de nuevas oportunidades y proyectos 🏅👩‍💻👨‍💻🏆!",
-        "¡Que la felicidad nos acompañe en este 2025 🤗🎉🎊🥂!",
-        "Gracias por tener la oportunidad de compartir este camino contigo mi querida Andy :3 🤗❤️🎮"
+        "¡Que la felicidad nos acompañe en este 2025 🤗🎉🎊🥂!"
     ];
 
-    const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+    const finalMessage = "Gracias por este año tan maravilloso Andy, te quiero mucho! 🤗❤️";
+
+    const celebrationIcons = [
+        GiPartyPopper,
+        MdCelebration,
+        GiPartyHat,
+        BsBalloonHeart,
+        GiStarsStack,
+        FaRegStar,
+        BsGift
+    ];
+
+    const handleNext = () => {
+        if (messageIndex < messages.length - 1) {
+            setMessageIndex(prev => prev + 1);
+            setCurrentIcon((prev) => (prev + 1) % celebrationIcons.length);
+            setIsOpen(false);
+        } else {
+            setIsComplete(true);
+        }
+    };
+
+    const handleClick = () => {
+        if (!isOpen) {
+            setIsOpen(true);
+        }
+    };
+
+    const CurrentCelebrationIcon = celebrationIcons[currentIcon];
 
     return (
         <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-purple-600 to-blue-600 p-4">
@@ -58,7 +70,7 @@ const NewYearBalloon = () => {
             <div className="relative flex flex-col items-center gap-4">
                 <motion.div
                     className="cursor-pointer"
-                    onClick={() => setIsOpen(true)}
+                    onClick={handleClick}
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                 >
@@ -78,18 +90,18 @@ const NewYearBalloon = () => {
                                 animate={{ opacity: 1, scale: 1 }}
                                 className="text-white text-xl md:text-2xl text-center max-w-md p-6 bg-white/20 backdrop-blur-md rounded-lg shadow-xl"
                             >
-                                {randomMessage}
+                                {isComplete ? finalMessage : messages[messageIndex]}
                             </motion.div>
                         )}
                     </AnimatePresence>
                 </motion.div>
-                
-                {isOpen && (
+
+                {isOpen && !isComplete && (
                     <motion.button
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         className="mt-4 px-6 py-2 bg-white text-purple-600 rounded-full font-semibold hover:bg-opacity-90 transition-colors flex items-center gap-2"
-                        onClick={handleReset}
+                        onClick={handleNext}
                     >
                         One more time <GiPartyFlags className="text-xl" />
                     </motion.button>
@@ -97,7 +109,7 @@ const NewYearBalloon = () => {
             </div>
 
             <footer className="absolute bottom-4 text-white/80 text-sm">
-                Con todo el cariño de mi corazón ❤️ Erik
+                Con todo el cariño de mi corazón para mi persona favorita ❤️ Erik 
             </footer>
         </div>
     );
