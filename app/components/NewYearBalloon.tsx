@@ -108,7 +108,7 @@ const NewYearBalloon = () => {
                 )}
             </div>
 
-            <footer className="absolute bottom-4 text-white/80 text-sm">
+            <footer className="absolute bottom-4 text-white/80 text-sm text-center">
                 Con todo el cariño de mi corazón para mi persona favorita ❤️ Erik 
             </footer>
         </div>
